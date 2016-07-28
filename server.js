@@ -24,6 +24,16 @@ app.get('/api/measures', function (req, res) {
     "light": 900
   }
 });
+// TODO: se connecter à la bdd Mongo pour faire un find() et renvoyer de vrais données
+});
+
+app.post('/api/measures/new', function (req, res) {
+  console.log(req.body);
+  res.sendStatus(201);
+  if (error) {
+    res.sendStatus(400);
+  }
+  // TODO: se connecter à la bdd Mongo pour faire un insert() de ce qui se trouve dans le body de la request
 });
 
 app.listen(port, function () {
