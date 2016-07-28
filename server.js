@@ -10,7 +10,16 @@ app.use(logger('dev'));
 
 app.get('/', function (req, res) {
   res.render('index');
-}); 
+});
+
+app.get('/api/measures', function (req, res) {
+  res.json({
+  "measures": {
+    "temperature": 25.4,
+    "light": 900
+  }
+});
+});
 
 app.listen(port, function () {
   console.log('Example app listening on port!' + port);
