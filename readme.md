@@ -19,7 +19,7 @@ Développer un petit site web en Node.js + Express.js qui peut se connecter à u
 1. Ce sera notre API en ligne qui contiendra toutes nos data dans une base de donnée.
 2. node.js (la technologie back end)
 3. [express.js](http://expressjs.com/) (le framework pour faire un site web avec Node.js)
-4. [MongoDB](https://www.mongodb.com/) (pour la partie bdd - [quickstart](https://docs.mongodb.com/manual/crud/)) avec [Mongoose](http://mongoosejs.com/) (pour faire du MongoDB avec Node.js - [quickstart](http://mongoosejs.com/docs/index.html))
+4. [MongoDB](https://www.mongodb.com/) (pour la partie bdd - [quickstart](https://docs.mongodb.com/manual/crud/) + [le process mongod](https://docs.mongodb.com/master/tutorial/manage-mongodb-processes/)) avec [Mongoose](http://mongoosejs.com/) (pour faire du MongoDB avec Node.js - [quickstart](http://mongoosejs.com/docs/index.html))
 5. Heroku (pour déployer une appli gratuite) + MongoLab (pour avoir une bdd MongoDB gratuite)
 6. cors (pour faire du cross origin) (on ne l'a pas encore abordé)
 
