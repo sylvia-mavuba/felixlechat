@@ -6,6 +6,16 @@ var port = process.env.PORT || 3000;
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 
+var mongoose = require('mongoose');
+var mongoUri = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/measures';
+var Measures = require('./models/measures.js').Measures;
+
+mongoose.connect(mongoUri, function(err, res) {
+  if (err) console.log('ERROR connecting to: ' + mongoUri + '. ' + err);
+  else console.log ('Successfully connected to: ' + mongoUri);
+});
+
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.set('view engine', 'ejs'); // moteur template
@@ -18,22 +28,22 @@ app.get('/', function (req, res) {
 });
 
 app.get('/api/measures', function (req, res) {
-  res.json({
-  "measures": {
-    "temperature": 25.4,
-    "light": 900
-  }
-});
-// TODO: se connecter à la bdd Mongo pour faire un find() et renvoyer de vrais données
+  Measures.find({}, function(error, data){
+    if (error) throw error;
+    else res.json({ 'measures': data });
+  });
 });
 
 app.post('/api/measures/new', function (req, res) {
   console.log(req.body);
-  res.sendStatus(201);
-  if (error) {
-    res.sendStatus(400);
-  }
-  // TODO: se connecter à la bdd Mongo pour faire un insert() de ce qui se trouve dans le body de la request
+  var newMeasures = new Measures({ 'temperature': req.body.measures.temperature, 'light': req.body.measures.light });
+  newMeasures.save(function (err) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.sendStatus(201);
+    }
+  });
 });
 
 app.listen(port, function () {
