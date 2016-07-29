@@ -17,11 +17,18 @@ Construire un circuit électronique avec des capteurs et se servir d'un Arduino 
 Développer un petit site web en Node.js + Express.js qui peut se connecter à une base de donnée Mongo. Ce site sera notre API que l'on pourra interroger sur différentes url pour récupérer les données au format JSON. Le tout hébergé quelque part … probablement sur Heroku.
 
 1. Ce sera notre API en ligne qui contiendra toutes nos data dans une base de donnée.
-2. node.js (back end)
-3. express.js (framework web pour node.js)
-4. MongoDB (pour la partie bdd)
-5. Heroku + MongoLab
-6. cors (pour faire du cross origin)
+2. node.js (la technologie back end)
+3. [express.js](http://expressjs.com/) (le framework pour faire un site web avec Node.js)
+4. [MongoDB](https://www.mongodb.com/) (pour la partie bdd - [quickstart](https://docs.mongodb.com/manual/crud/)) avec [Mongoose](http://mongoosejs.com/) (pour pouvoir faire du MongoDB avec Node.js - [quickstart](http://mongoosejs.com/docs/index.html))
+5. Heroku (pour déployer une appli gratuite) + MongoLab (pour avoir une bdd MongoDB gratuite)
+6. cors (pour faire du cross origin) (on ne l'a pas encore abordé)
+
+##### Liens utiles
+* Repo github bidon qui sert de modèle :  
+[https://github.com/sylvia-mavuba/felixlechat](https://github.com/sylvia-mavuba/felixlechat)
+* Appli Heroku bidon qui va avec :   [https://felixlechat.herokuapp.com/api/measures](https://felixlechat.herokuapp.com/api/measures) (GET)  
+[https://felixlechat.herokuapp.com/api/measures/new](https://felixlechat.herokuapp.com/api/measures/new) (POST)
+
 
 
 ### Partie Front end / web app
