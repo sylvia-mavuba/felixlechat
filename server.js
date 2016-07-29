@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 
 var mongoose = require('mongoose');
-var mongoUri = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/measures';
+var mongoUri = process.env.MONGODB_URI || 'mongodb://localhost/measures';
 var Measures = require('./models/measures.js').Measures;
 
 mongoose.connect(mongoUri, function(err, res) {
