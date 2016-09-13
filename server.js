@@ -5,6 +5,7 @@ var app = express();
 var port = process.env.PORT || 3000;
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
+var cors = require('cors');
 
 var mongoose = require('mongoose');
 var mongoUri = process.env.MONGODB_URI || 'mongodb://localhost/measures';
@@ -21,6 +22,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.set('view engine', 'ejs'); // moteur template
 app.set('views', path.join(__dirname, '/views')); //dossier pages
 app.use(logger('dev'));
+app.use(cors());
 app.use(methodOverride());
 
 app.get('/', function (req, res) {
